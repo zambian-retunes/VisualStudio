@@ -21,12 +21,10 @@ namespace GitHub.Services
         IObservable<Unit> InsertUser(AccountCacheItem user);
         IObservable<IReadOnlyList<IAccount>> GetAccounts();
         IObservable<IRemoteRepositoryModel> GetRepository(string owner, string repo);
-        ITrackingCollection<IRemoteRepositoryModel> GetRepositories(ITrackingCollection<IRemoteRepositoryModel> collection);
         IObservable<IRemoteRepositoryModel> GetForks(IRepositoryModel repository);
         IObservable<LicenseItem> GetLicenses();
         IObservable<GitIgnoreItem> GetGitIgnoreTemplates();
         IObservable<IPullRequestModel> GetPullRequest(string owner, string name, int number);
-        ITrackingCollection<IPullRequestModel> GetPullRequests(IRepositoryModel repo, ITrackingCollection<IPullRequestModel> collection);
         IObservable<IPullRequestModel> CreatePullRequest(ILocalRepositoryModel sourceRepository, IRepositoryModel targetRepository,
             IBranch sourceBranch, IBranch targetBranch,
             string title, string body);
